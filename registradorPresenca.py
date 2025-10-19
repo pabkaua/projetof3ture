@@ -1,3 +1,15 @@
+# main
+from datetime import date
+# --------------------------------------------------------------------------------------------------------
+def lerCodigo(): # lê o código cadastrado pelo administrativo da academia no arquivo codigoDia.txt
+    try:
+        with open("codigoDia.txt", "r") as codigoTxt:
+            codigo = codigoTxt.read().strip()
+    except FileNotFoundError:
+        codigo = "123"
+    return codigo
+
+
 def preencherAta(dados): # adiciona na ultima linha da ata a presença do usuário
     nome = dados["nome"]
     data = dados["data"]
@@ -13,23 +25,22 @@ def checarPreenchimento(dados): # checa se o usuário já preencheu a ata no dia
     hoje = dados["data"]
     FILE = dados["ata"]
 
-    with open(FILE, 'r') as arquivo:
-        for linha in arquivo:
-            linha = linha.split(" | ")
-            dataAta = linha[0]
-            nomeAta = linha[1].strip()
-            if nome == nomeAta and hoje == dataAta:
-                return True
-    return False
+    try:
+        with open(FILE, 'r') as arquivo:
+            for linha in arquivo:
+                partes = linha.strip().split(" | ")
+                if len(partes) == 2:
+                    dataAta, nomeAta = partes # Desempacotamento mais legível
+                    if nome == nomeAta and hoje == dataAta:
+                        return True
+        return False
+    except FileNotFoundError:
+        return False
             
 
 def checarCodigo(dados): # checa se o código fornecido foi o mesmo da academia
     numeroEntrada = input("Digite o código do dia: ")
-    if numeroEntrada == dados["codigo"]:
-        retorno = True
-    else:
-        retorno = False
-    return retorno
+    return numeroEntrada == dados["codigo"] 
 
 
 def presencaDoDia(dados): # menu do usuário
@@ -51,15 +62,11 @@ def presencaDoDia(dados): # menu do usuário
             print("Você já preencheu a ata hoje!")
     else:
         print("Ok. Presença não registrada")
+# --------------------------------------------------------------------------------------------------------
 
-
-# main
-from datetime import date
-# from interfaceUsuario import codigo
 ATA_FILE = "ataPresenca.txt"
-
 data_hoje = date.today()
-codigo_dia = "1"
+codigo_dia = lerCodigo()
 
 dados = {
     "nome": "",
