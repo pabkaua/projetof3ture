@@ -1,3 +1,5 @@
+#aaaaaaaaaaaaaaa teste
+
 def preencherAta(dados): # adiciona na ultima linha da ata a presença do usuário
     nome = dados["nome"]
     data = dados["data"]
