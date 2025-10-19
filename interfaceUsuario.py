@@ -6,13 +6,13 @@ dadosProfessor = {}
 
 def escreveCodigo():
     codigo = input("Cadastre o código de validação de presença: ")
-    with open("codigoDia.txt", "w") as codigoTxt:
+    with open("game-codigoDia.txt", "w") as codigoTxt:
         codigoTxt.write(codigo)
         print("Código cadastrado.\n")
     return codigo
 
 def lerCodigo():
-    with open("codigoDia.txt", "r") as codigoTxt:
+    with open("game-codigoDia.txt", "r") as codigoTxt:
         codigo = codigoTxt.read().strip()
     return codigo
 
