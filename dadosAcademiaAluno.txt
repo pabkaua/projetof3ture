@@ -3,4 +3,5 @@ aluno: BRUNO | idade: 22 | peso: 75 | altura: 175 | sexo: MASCULINO | plano: ANU
 aluno: LARA | idade: 15 | peso: 65 | altura: 170 | sexo: FEMININO | plano: TRIMESTRAL
 aluno: VIVIANE | idade: 48 | peso: 80 | altura: 157 | sexo: FEMININO | plano: MENSAL
 aluno: JUNIOR | idade: 51 | peso: 80 | altura: 175 | sexo: MASCULINO | plano: SEMESTRAL
-aluno: KAUA | idade: 19 | peso: 56 | altura: 156 | sexo: MASCULINO | plano: MENSAL
+aluno: KAUA | idade: 19 | peso: 61 | altura: 178 | sexo: MASCULINO | plano: MENSAL
+
