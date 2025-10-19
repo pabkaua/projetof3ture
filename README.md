@@ -6,5 +6,5 @@ caso queira, serão feitos - através da função checarCodigo e checarPreenchim
 ele já preencheu a ata nesse mesmo dia. Caso o código fornecido esteja correto, e ele não tenha preenchido a ata no mesmo dia, a função preencherAta é executada, 
 adicionando no ataPresenca.txt a data e o nome do aluno/usuário.
 
-execute jogo.py para registrar presença
+execute registradorPresenca.py para registrar presença
 execute validarPresenca.py para validar as presenças da ataPreseca.txt e gerar um ranking em ranking.txt
