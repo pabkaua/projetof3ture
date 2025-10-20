@@ -1,6 +1,18 @@
 LOG_FILE = 'dadosAcademiaAluno.txt'
 LOG2_FILE = 'dadosAcademiaProfessor.txt'
 
+def escreveCodigo():
+    codigo = input("Cadastre o código de validação de presença: ")
+    with open("gameCodigoDia.txt", "w") as codigoTxt:
+        codigoTxt.write(codigo)
+        print("Código cadastrado.\n")
+    return codigo
+
+def lerCodigo():
+    with open("gameCodigoDia.txt", "r") as codigoTxt:
+        codigo = codigoTxt.read().strip()
+    return codigo
+
 def salvarAlunoNoArquivo(dadosAlunos):
     with open(LOG_FILE, 'w') as arquivo:
         for nome, info in dadosAlunos.items():

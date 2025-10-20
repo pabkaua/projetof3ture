@@ -9,7 +9,7 @@ def refazerAta(listaNomes, dicionario): # refaz a ata escrevendo os nomes dos qu
         for linha in listaNomes:
             doc.write(linha)
 
-def main(dicio): # confere se algum nome já esta preenchido, se não, executa as funções
+def menu(dicio): # confere se algum nome já esta preenchido, se não, executa as funções
     ata = dicio["ataGeral"]
     aprovados = dicio["ataAprovados"]
     listaAprovados = []
@@ -66,10 +66,24 @@ def main(dicio): # confere se algum nome já esta preenchido, se não, executa a
                 novaAta.extend(linhas_restantes)
                 break
     refazerAta(novaAta, dicio)
+    print("Sistema finalizado.\n")
+'''
+def atualizarRankings(dicio):
+    RANKING_FILE = dicio["rankings"]
+    DADOS_FILE = dicio["ataAprovados"]
+    dicioAux = {}
+    with open(DADOS_FILE, "r") as arquivo:
+        for linha in arquivo:
+            partes = linha.split(" | ")
+            data, nome = partes
+            dicioAux[]
+'''
 
-dados = {
-    "ataGeral": "game-ataPresenca.txt",
-    "ataAprovados": "game-ataAprovados.txt"
-}
-
-main(dados)
+def main():
+    dados = {
+        "ataGeral": "gameAtaPresenca.txt",
+        "ataAprovados": "gameAtaAprovados.txt",
+        "rankings": "gameRankings.txt"
+    }
+    menu(dados)
+    #atualizarRankings(dados)

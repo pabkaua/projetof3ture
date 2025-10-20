@@ -3,7 +3,7 @@ from datetime import date
 # --------------------------------------------------------------------------------------------------------
 def lerCodigo(): # lê o código cadastrado pelo administrativo da academia no arquivo codigoDia.txt
     try:
-        with open("game-codigoDia.txt", "r") as codigoTxt:
+        with open("gameCodigoDia.txt", "r") as codigoTxt:
             codigo = codigoTxt.read().strip()
     except FileNotFoundError:
         codigo = "123"
@@ -62,9 +62,10 @@ def presencaDoDia(dados): # menu do usuário
             print("Você já preencheu a ata hoje!")
     else:
         print("Ok. Presença não registrada")
-# --------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------
+#---------------------------------------------------
 
-ATA_FILE = "game-ataPresenca.txt"
+ATA_FILE = "gameAtaPresenca.txt"
 data_hoje = date.today()
 codigo_dia = lerCodigo()
 

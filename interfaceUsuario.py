@@ -1,20 +1,9 @@
 import CRUD 
-from logger import lerArquivoAluno, lerArquivoProfessor
+from logger import lerArquivoAluno, lerArquivoProfessor, escreveCodigo, lerCodigo
+import gameAprovadorPresenca
 
 dadosAlunos = {}
 dadosProfessor = {} 
-
-def escreveCodigo():
-    codigo = input("Cadastre o código de validação de presença: ")
-    with open("game-codigoDia.txt", "w") as codigoTxt:
-        codigoTxt.write(codigo)
-        print("Código cadastrado.\n")
-    return codigo
-
-def lerCodigo():
-    with open("game-codigoDia.txt", "r") as codigoTxt:
-        codigo = codigoTxt.read().strip()
-    return codigo
 
 def menu(dadosAlunos, dadosProfessor):
     programa = 1
@@ -27,6 +16,7 @@ def menu(dadosAlunos, dadosProfessor):
         print("5 - Ver todos os produtos fornecidos pela F3 Fitness")
         print("6 - Cadastrar código de presença")
         print("7 - Visualizar código de presença")
+        print("8 - Aprovar presença")
         print("0 - Fechar programa")
         escolha = int(input("Escolha o que você deseja fazer: "))
         print("\n")
@@ -63,6 +53,9 @@ def menu(dadosAlunos, dadosProfessor):
             codigoDia = lerCodigo()
             print("Código cadastrado: {}\n".format(codigoDia))
             
+        elif escolha == 8:
+            gameAprovadorPresenca.main()
+
         else:
             escolha = int(input("Entrada inválida. Tente novamente: "))
 
