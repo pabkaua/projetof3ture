@@ -62,8 +62,8 @@ def presencaDoDia(dados): # menu do usuário
             print("Você já preencheu a ata hoje!")
     else:
         print("Ok. Presença não registrada")
+
 # -----------------------------------------------------
-#---------------------------------------------------
 
 ATA_FILE = "gameAtaPresenca.txt"
 data_hoje = date.today()

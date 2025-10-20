@@ -60,30 +60,18 @@ def menu(dicio): # confere se algum nome já esta preenchido, se não, executa a
                         break
                     else: 
                         print("Digite um número válido")
-
+                        
             if sair: 
                 linhas_restantes = listaAta[index:]
                 novaAta.extend(linhas_restantes)
                 break
     refazerAta(novaAta, dicio)
     print("Sistema finalizado.\n")
-'''
-def atualizarRankings(dicio):
-    RANKING_FILE = dicio["rankings"]
-    DADOS_FILE = dicio["ataAprovados"]
-    dicioAux = {}
-    with open(DADOS_FILE, "r") as arquivo:
-        for linha in arquivo:
-            partes = linha.split(" | ")
-            data, nome = partes
-            dicioAux[]
-'''
+
 
 def main():
     dados = {
         "ataGeral": "gameAtaPresenca.txt",
         "ataAprovados": "gameAtaAprovados.txt",
-        "rankings": "gameRankings.txt"
     }
     menu(dados)
-    #atualizarRankings(dados)
